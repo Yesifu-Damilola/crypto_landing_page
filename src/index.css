@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --font-inter: "Inter", "sans-serif";
+  --font-glory: "Glory", "sans-serif";
+  --color-primary: #0ea271;
+  --color-primary-100: #10b981;
+  --color-primary-300: #f1fef9;
+  --color-white-100: #e4e5eb;
+  --color-white-200: #fafafb;
+  --color-white-300: #f4f5f7;
+  --color-dark: #111217;
+  --color-dark-100: #90949e;
+  --color-dark-200: #444a5b;
+  --color-dark-300: #666f89;
+}
+
+.wrapper {
+  @apply max-w-[1152px] container mx-auto lg:px-0 px-4;
+}
+
+.animate-bounce-less {
+  animation: bounceLess 1.5s ease-in-out infinite;
+}
