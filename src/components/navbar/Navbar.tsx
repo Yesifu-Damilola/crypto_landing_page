@@ -22,23 +22,32 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden lg:flex max:w-[831px] w-auto gap-6">
-            {["Buy Crypto", "Markets", "Trades", "Derivatives", "Earn", "NFT"].map(
-              (item, index) => (
-                <li
-                  key={index}
-                  className={`flex items-center gap-1 text-lg font-inter cursor-pointer ${
-                    theme === "dark"
-                      ? "text-gray-300 hover:text-primary-100"
-                      : "text-dark-200 hover:text-primary-100"
-                  }`}
-                >
-                  {item}
-                  {["Buy Crypto", "Trades", "Derivatives", "Earn", "NFT"].includes(
-                    item
-                  ) && <ChevronDown className="w-3 h-3" />}
-                </li>
-              )
-            )}
+            {[
+              "Buy Crypto",
+              "Markets",
+              "Trades",
+              "Derivatives",
+              "Earn",
+              "NFT",
+            ].map((item, index) => (
+              <li
+                key={index}
+                className={`flex items-center gap-1 text-lg font-inter cursor-pointer ${
+                  theme === "dark"
+                    ? "text-gray-300 hover:text-primary-100"
+                    : "text-dark-200 hover:text-primary-100"
+                }`}
+              >
+                {item}
+                {[
+                  "Buy Crypto",
+                  "Trades",
+                  "Derivatives",
+                  "Earn",
+                  "NFT",
+                ].includes(item) && <ChevronDown className="w-3 h-3" />}
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -70,7 +79,11 @@ const Navbar = () => {
           onClick={toggleMenu}
           className="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? (
+            <X size={24} className="text-dark dark:text-white" />
+          ) : (
+            <Menu size={24} className="text-dark dark:text-white" />
+          )}
         </button>
       </header>
 
@@ -79,21 +92,30 @@ const Navbar = () => {
         <div className={`lg:hidden bg-[#FAFAFB] dark:bg-gray-900 z-50`}>
           <nav className="p-6">
             <ul className="space-y-6">
-              {["Buy Crypto", "Markets", "Trades", "Derivatives", "Earn", "NFT"].map(
-                (item, index) => (
-                  <li
-                    key={index}
-                    className={`flex items-center justify-between text-lg font-inter cursor-pointer ${
-                      theme === "dark" ? "text-gray-300" : "text-dark-200"
-                    }`}
-                  >
-                    {item}
-                    {["Buy Crypto", "Trades", "Derivatives", "Earn", "NFT"].includes(
-                      item
-                    ) && <ChevronDown className="w-3 h-3" />}
-                  </li>
-                )
-              )}
+              {[
+                "Buy Crypto",
+                "Markets",
+                "Trades",
+                "Derivatives",
+                "Earn",
+                "NFT",
+              ].map((item, index) => (
+                <li
+                  key={index}
+                  className={`flex items-center justify-between text-lg font-inter cursor-pointer ${
+                    theme === "dark" ? "text-gray-300" : "text-dark-200"
+                  }`}
+                >
+                  {item}
+                  {[
+                    "Buy Crypto",
+                    "Trades",
+                    "Derivatives",
+                    "Earn",
+                    "NFT",
+                  ].includes(item) && <ChevronDown className="w-3 h-3" />}
+                </li>
+              ))}
             </ul>
             <div className="mt-6 space-y-4">
               <button className="w-full border text-primary-100 py-3 px-6 rounded-lg text-base font-semibold font-inter">
